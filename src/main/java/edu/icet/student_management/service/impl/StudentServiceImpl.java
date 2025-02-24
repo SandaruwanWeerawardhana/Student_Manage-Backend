@@ -16,4 +16,9 @@ public class StudentServiceImpl implements StudentService {
     public String getVersion() {
         return "1.0.0V";
     }
+
+    @Override
+    public void add(Student student) {
+
+    }
 }

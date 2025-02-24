@@ -1,8 +1,7 @@
 package edu.icet.student_management.entity;
 
 import edu.icet.student_management.util.GenderType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +14,8 @@ import lombok.ToString;
 @Entity
 @Table(name = "student")
 public class StudentEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String address;

@@ -1,22 +1,24 @@
 package edu.icet.student_management.controller;
 
 import edu.icet.student_management.dto.Student;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import edu.icet.student_management.service.StudentService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/student")
+@RequiredArgsConstructor
+@CrossOrigin
 public class StudentController {
 
-    @PostMapping("")
-    public void add() {
+    final StudentService service;
 
+    @PostMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void add(@RequestBody Student student) {
+        service.add(student);
     }
 
-    public List<Student> getName() {
-        return ;
-    }
+
 }
